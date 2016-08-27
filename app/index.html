@@ -12,11 +12,22 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
+  <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyC-e-htcoPAfBp4MTqzjjWo2uz6H8MoHrY",
+      authDomain: "wealthspring-4df9d.firebaseapp.com",
+      databaseURL: "https://wealthspring-4df9d.firebaseio.com",
+      storageBucket: "wealthspring-4df9d.appspot.com",
+    };
+    firebase.initializeApp(config);
+  </script>
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
   <ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
+    <li><a href="#!/login">Login</a></li>
     <li><a href="#!/view2">view2</a></li>
   </ul>
 
@@ -36,6 +47,7 @@
   <script src="app.js"></script>
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
+  <script src="login/login.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
