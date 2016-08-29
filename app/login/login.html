@@ -1,14 +1,15 @@
-<div class="login-page">
+<div class="login-page" ng-controller="LoginViewController">
   <div class="form">
-    <form class="register-form" ng-show="isRegisterFormOpen">
-      <input type="text" placeholder="name" />
-      <input type="password" placeholder="password" /> <input type="text" placeholder="email address" />
-      <button>create</button>
+    <form class="register-form" ng-show="isRegisterFormOpen" ng-submit="createAccount(username,password,email)">
+      <input type="text" placeholder="name" ng-model="username"/>
+      <input type="password" placeholder="password" ng-model="password"/> 
+      <input type="text" placeholder="email address" ng-model="email"/>
+      <button type="submit">create</button>
       <p class="message">Already registered? <a ng-click="isRegisterFormOpen = !isRegisterFormOpen" href="">Sign In</a></p>
     </form>
-    <form class="login-form" ng-show="!isRegisterFormOpen">
-      <input type="text" placeholder="username" />
-      <input type="password" placeholder="password" />
+    <form class="login-form" ng-show="!isRegisterFormOpen" ng-submit="login(email,password)">
+      <input type="text" placeholder="email" ng-model="email"/>
+      <input type="password" placeholder="password" ng-model="password"/>
       <button>login</button>
       <p class="message">Not registered? <a ng-click="isRegisterFormOpen = !isRegisterFormOpen" href="">Create an account</a></p>
     </form>

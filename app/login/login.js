@@ -9,6 +9,24 @@ angular.module('myApp.login', ['ngRoute'])
   });
 }])
 
-.controller('LoginViewController', [function() {
+.controller('LoginViewController', ['$scope', function($scope) {
     this.isRegisterFormOpen = false;
+
+    $scope.createAccount = function(username, password, email) {
+        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log("ERROR Contacting firebase: " + errorMessage);
+        });
+    };
+
+    $scope.login = function(email, password) {
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log("ERROR Contacting firebase: " + errorMessage);
+        });
+    };
 }]);
