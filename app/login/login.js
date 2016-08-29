@@ -9,7 +9,7 @@ angular.module('myApp.login', ['ngRoute'])
   });
 }])
 
-.controller('LoginViewController', ['$scope', function($scope) {
+.controller('LoginViewController', ['$scope', '$location', function($scope, $location) {
     this.isRegisterFormOpen = false;
 
     $scope.createAccount = function(username, password, email) {
@@ -19,6 +19,8 @@ angular.module('myApp.login', ['ngRoute'])
             var errorMessage = error.message;
             console.log("ERROR Contacting firebase: " + errorMessage);
         });
+        //if successful
+        $location.path('dashboard');
     };
 
     $scope.login = function(email, password) {
@@ -28,5 +30,8 @@ angular.module('myApp.login', ['ngRoute'])
             var errorMessage = error.message;
             console.log("ERROR Contacting firebase: " + errorMessage);
         });
+
+        //if successful
+        $location.path('dashboard');
     };
 }]);
