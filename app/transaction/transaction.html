@@ -1,0 +1,14 @@
+<table>
+    <thead>
+        <tr>
+            <td>Payee</td>
+            <td>Amount</td>
+        </tr>
+    </thead>
+    <tbody ng-repeat="transaction in $ctrl.transactions">
+        <tr>
+            <td>{{transaction.payee}}</td>
+            <td>{{transaction.amount}}</td>
+        </tr>
+    </tbody>
+</table>
