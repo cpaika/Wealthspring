@@ -13,7 +13,7 @@ angular.module('myApp')
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             firebase.database().ref('users/' + user.uid).on('value', function(snapshot) {
-                _this.transactions = [ snapshot.val() ];
+                _this.transactions = snapshot.val();
             });
         } else {
             // No user is signed in.

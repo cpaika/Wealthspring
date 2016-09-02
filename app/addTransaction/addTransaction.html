@@ -1,5 +1,8 @@
-<form class="add-transaction" ng-submit="addTransaction(payee, amount)">
+<form class="add-transaction" ng-submit="addTransaction(payee, account, category, amount, cleared)">
       <input type="text" placeholder="payee" ng-model="payee"/>
+      <input type="text" placeholder="account" ng-model="account"/>
+      <input type="text" placeholder="category" ng-model="category"/>
       <input type="text" placeholder="amount" ng-model="amount"/>
+      <input type="radio" placeholder="cleared" ng-model="cleared"/>
       <button>Add Transaction</button>
 </form>

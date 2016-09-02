@@ -8,7 +8,10 @@
     <tbody ng-repeat="transaction in $ctrl.transactions">
         <tr>
             <td>{{transaction.payee}}</td>
+            <td>{{transaction.account}}</td>
+            <td>{{transaction.category}}</td>
             <td>{{transaction.amount}}</td>
+            <td>{{transaction.cleared}}</td>
         </tr>
     </tbody>
 </table>
