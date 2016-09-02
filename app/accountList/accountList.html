@@ -1,0 +1,14 @@
+<table>
+    <thead>
+        <tr>
+            <td>Account</td>
+            <td>Amount</td>
+        </tr>
+    </thead>
+    <tbody ng-repeat="account in $ctrl.accounts">
+        <tr>
+            <td>{{account.name}}:</td>
+            <td>{{account.amount}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -126,3 +126,56 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
 }
+
+/**
+ * basic layout
+ */
+  
+  /* sizes */
+  #main-wrap > div {
+    min-height: 450px;
+  }
+  
+  
+  #header,
+  #footer {
+    min-height: 40px;
+  }
+  
+  
+
+  #main-wrap > div { min-height: 450px; }
+  
+  
+  #header,
+  #footer {
+      min-height: 40px;
+  }
+  
+  
+  /* layout */
+  #main-wrap {
+      /* overflow to handle inner floating block */
+      overflow: hidden;
+  }
+  
+  #sidebar {
+      float: left;
+      width: 30%;
+  }
+  
+  #content-wrap {
+      float: right;
+      width: 70%;
+  }  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
