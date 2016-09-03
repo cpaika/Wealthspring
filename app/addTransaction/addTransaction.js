@@ -22,7 +22,7 @@ angular.module('myApp')
                             break;
                         }
                     }
-                    firebase.database().ref('users/' + user.uid + '/accounts/' + _this.accountName).push({
+                    firebase.database().ref('users/' + user.uid + '/accounts/' + _this.accountName +'/transactions').push({
                         payee: payee,
                         account: account,
                         category: category,
