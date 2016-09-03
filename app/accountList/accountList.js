@@ -9,14 +9,18 @@ angular.module('myApp')
 
 .controller('AccountController', ['$scope', '$location', function($scope, $location) {
     var _this = this;
+    _this.accounts = {};
+    $scope.loadData = function() {
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                firebase.database().ref('users/' + user.uid + '/accounts').on('value', function(snapshot) {
+                    _this.accounts = snapshot.val();
+                });
+            } else {
+                // No user is signed in.
+            }
+        });
+    };
 
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            firebase.database().ref('users/' + user.uid + '/accounts').on('value', function(snapshot) {
-                _this.accounts = snapshot.val();
-            });
-        } else {
-            // No user is signed in.
-        }
-    });
+    $scope.loadData();
 }]);

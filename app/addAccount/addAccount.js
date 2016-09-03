@@ -13,7 +13,8 @@ angular.module('myApp')
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 firebase.database().ref('users/' + user.uid + '/accounts/').push({
-                    name: name
+                    name: name,
+                    total_uncleared: 0
                 });
             } else {
                 // No user is signed in.
