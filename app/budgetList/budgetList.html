@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <tr>
+            <td>Category</td>
+            <td>Amount Budgeted</td>
+            <td>Amount Spent</td>
+            <td>Amount Left</td>
+        </tr>
+    </thead>
+    <tbody ng-repeat="category in $ctrl.categories">
+        <tr>
+            <td>{{category.name}}:</td>
+            <td>{{category.amount_budgeted}}</td>
+            <td>{{category.amount_spent}}</td>
+            <td>{{category.amount_budgeted - category.amount_spent}}</td>
+        </tr>
+    </tbody>
+</table>

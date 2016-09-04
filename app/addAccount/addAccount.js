@@ -4,10 +4,10 @@ angular.module('myApp')
 
 .component('addAccount', {
     templateUrl: 'addAccount/addAccount.html',
-    controller: 'addAccountController'
+    controller: 'AddAccountController'
 })
 
-.controller('addAccountController', ['$scope', '$location', function($scope, $location) {
+.controller('AddAccountController', ['$scope', '$location', function($scope, $location) {
 
     $scope.addAccount = function(name) {
         firebase.auth().onAuthStateChanged(function(user) {

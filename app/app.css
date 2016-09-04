@@ -127,6 +127,15 @@ body {
   -moz-osx-font-smoothing: grayscale;      
 }
 
+
+/**
+Transaction table View
+*/
+
+td {
+  padding: 10px;
+}
+
 /**
  * basic layout
  */

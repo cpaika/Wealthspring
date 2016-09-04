@@ -25,7 +25,7 @@ angular.module('myApp')
                         }
                     }
                     for(var transaction in _this.accounts[_this.accountName].transactions) {
-                        _this.accountTotal += parseInt(_this.accounts[account].transactions[transaction].amount);
+                        _this.accountTotal += parseFloat(_this.accounts[account].transactions[transaction].amount);
                     }
                     firebase.database().ref('users/' + user.uid + '/accounts/' + _this.accountName +'/transactions').push({
                         payee: payee,
